@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded" ,function () {
       if((parseInt(document.getElementById("bulletsDigits").innerHTML)) == -1){
          var check = parseInt(document.getElementsByClassName("lastBul")[0].style.bottom);
          console.log(parseInt(document.getElementsByClassName("lastBul")[0].style.bottom) + "last bullet");
-         if(check >= 280){
+         if(check >= 270){
             if(parseInt(document.getElementById("points").innerHTML) > 5){
                alert("You win !")
 
