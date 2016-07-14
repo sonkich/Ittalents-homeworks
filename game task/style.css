@@ -24,3 +24,19 @@
         background-color: #000;
         bottom: 0;
 }
+
+.bul {
+   width: 4px;
+   height: 4px;
+   background-color: blue;
+   position: absolute;
+}
+
+#stats {
+   position: absolute;
+   left: -50px;
+}
+
+.lastBul {
+   visibility: hidden;
+}
