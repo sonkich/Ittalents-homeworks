@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded" ,function () {
    function shoot(){
 
       var numberOfBullets = parseInt(document.getElementById("bulletsDigits").innerHTML);
-      if(numberOfBullets >= 0){
+      if(numberOfBullets > 0){
 
          numberOfBullets--;
 
@@ -80,11 +80,22 @@ document.addEventListener("DOMContentLoaded" ,function () {
          bullet.className = "bul";
          bullet.style.bottom = 20 + 'px';
          bullet.style.left = (shipPosition.left+3) + 'px';
-         console.log(numberOfBullets);
-         if(numberOfBullets == -1){
-            bullet.className += " lastBul";
-         }
+
          document.getElementById('wrapper').appendChild(bullet);
+      }
+   }
+
+   function checkForWin() {
+      var bulCount = parseInt(document.getElementById("bulletsDigits").innerHTML);
+      var divCount = document.getElementsByClassName('bul').length;
+
+      if(bulCount == 0 && divCount == 0){
+         var points = parseInt(document.getElementById("points").innerHTML);
+         if(points > 5){
+            alert("You win !");
+         }else{
+            alert("HAHA you lose !");
+         }
       }
    }
 
@@ -95,19 +106,7 @@ document.addEventListener("DOMContentLoaded" ,function () {
       shipMove();
       booletMove();
 
-      if((parseInt(document.getElementById("bulletsDigits").innerHTML)) == -1){
-         var check = parseInt(document.getElementsByClassName("lastBul")[0].style.bottom);
-         console.log(parseInt(document.getElementsByClassName("lastBul")[0].style.bottom) + "last bullet");
-         if(check >= 270){
-            if(parseInt(document.getElementById("points").innerHTML) > 5){
-               alert("You win !")
-
-            }else{
-               alert("haha you lose !")
-
-            }
-         }
-      }
+      checkForWin();
       requestAnimationFrame(gameLoop);
    }
 
