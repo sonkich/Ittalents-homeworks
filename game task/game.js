@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded" ,function () {
       top: 0,
       left: 0
    }
-
+   var over = false;
    var shipPosition = {
       top: 580,
       left: 0,
@@ -90,6 +90,7 @@ document.addEventListener("DOMContentLoaded" ,function () {
       var divCount = document.getElementsByClassName('bul').length;
 
       if(bulCount == 0 && divCount == 0){
+         over = true;
          var points = parseInt(document.getElementById("points").innerHTML);
          if(points > 5){
             alert("You win !");
@@ -107,10 +108,14 @@ document.addEventListener("DOMContentLoaded" ,function () {
       booletMove();
 
       checkForWin();
+      if(!over){
       requestAnimationFrame(gameLoop);
+      }
    }
 
+   if(!over){
    requestAnimationFrame(gameLoop);
+   }
 
    document.addEventListener('keydown', function(e) {
 
