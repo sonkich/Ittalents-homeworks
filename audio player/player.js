@@ -7,6 +7,7 @@ function musicPlayer() {
 
 
 
+
    dir = "audio/";
    ext = ".mp3";
    playlist = [
@@ -24,6 +25,16 @@ function musicPlayer() {
    durtimetext = document.getElementById("durtimetext");
    playlist_status = document.getElementById("playlist_status");
    select = document.querySelector("select");
+   //creating playlist
+
+   for(var i =0; i < playlist.length ; i++){
+      var temp = document.createElement("option");
+
+      temp.value = i;
+      temp.text = (i+1) + " ."+ playlist[i];
+
+      select.add(temp , null);
+   }
    // audio object
 
    audio = new Audio();
@@ -117,8 +128,8 @@ function musicPlayer() {
 	}
 
    function switchTrack(index){
-      console.log(parseInt(index+1));
-		playlist_status.innerHTML = "Track "+(parseInt(index+1))+" - "+ playlist[index]+ext;
+      console.log(parseInt(index+1) ,"--- ", index  );
+		playlist_status.innerHTML = "Track "+(parseInt(index)+1)+" - "+ playlist[index]+ext;
 		audio.src = dir+playlist[index]+ext;
 	    audio.play();
 	}
