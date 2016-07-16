@@ -5,19 +5,44 @@
    outline: none;
 }
 body {
-   background-color: #666;
+   background-color: #333;
+}
+
+#wrapper {
+   width: 80%;
+   margin: 30px auto;
 }
 
 #music-player {
-   margin: 50px;
-   background-color: #000;
+   float:left;
+   width: 450px;
+   height: 60px;
+   border-radius: 5px;
+   box-shadow: 3px 3px 10px #000034;
+   background: #4c4c4c; /* Old browsers */
+   border:1px solid #111;
+   background: linear-gradient(to bottom, #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+}
+
+input {
+   display: block;
+   float: left;
+   margin: 24px 10px 0 0;
 }
 
 
 button {
    cursor: pointer;
    border: none;
+   display: block;
+   float: left;
+   margin: 22px 10px 0 0;
 
+}
+
+#audio-wrapper {
+   margin-left: 60px;
 }
 
 #playpausebtn {
@@ -40,7 +65,7 @@ input#volumeslider{
 }
 input[type='range'] {
     -webkit-appearance: none !important;
-	margin:0px;
+
 	padding:0px;
     background: #000;
     height:13px;
@@ -58,4 +83,79 @@ input[type='range']::-moz-range-thumb {
     width:11px;
 	border-radius:100%;
 	cursor:pointer;
+}
+
+div#timebox{
+
+	display:block;
+   float: left;
+   margin: 24px 10px 0 0 ;
+   border-bottom:#333 1px solid;
+	width:80px;
+	background:#000;
+	text-align:center;
+	color: #09F;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:10px;
+   height: 13px;
+}
+
+#playlist {
+   float: left;
+   margin-left: 10px;
+   width: 300px;
+   height: 400px;
+   border-style: solid;
+   border-width: 33px 31px 29px;
+   -moz-border-image: url(img/border.png) 33 31 29 repeat;
+   -webkit-border-image: url(img/border.png) 33 31 29 repeat;
+   -o-border-image: url(img/border.png) 33 31 29 repeat;
+   border-image: url(img/border.png) 33 31 29 fill repeat;
+   border-radius: 15px;
+   background-color: rgba(0,0,0,0.5);
+   padding:10px;
+   box-shadow: 0 0 15px #000034;
+   background-image: url(img/pattern.png);
+
+
+}
+
+p {
+
+   width: 220px;
+   color: #09F;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:12px;
+   overflow: hidden;
+   white-space: nowrap;
+}
+
+#display {
+   width: 100%;
+   border: 4px inset #222;
+   background-color: #000;
+   padding: 3px;
+
+}
+
+#display-wrapper {
+   position: absolute;
+   width: 450px;
+   top: 100px;
+   padding: 10px;
+   background: linear-gradient(to bottom, #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%);
+   border-radius: 5px;
+   box-shadow: 3px 3px 10px #000034;
+}
+
+select {
+   appearance: none;
+   width: 230px;
+   background-color: rgba(0,0,0,0);
+   border: none;
+}
+
+select option {
+   margin-bottom: 5px;
+   color: #09F;
 }
